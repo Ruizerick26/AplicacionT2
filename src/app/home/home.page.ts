@@ -1,6 +1,6 @@
 import { Component, NgZone } from '@angular/core'
 import { Geolocation } from '@ionic-native/geolocation/ngx'
-
+import {BasedataService} from '../services/basedata.service'
 
 @Component({
   selector: 'app-home',
@@ -12,7 +12,8 @@ export class HomePage {
   longitude: any = 0
 
   constructor(
-    private geolocation: Geolocation
+    private geolocation: Geolocation,
+    private firestore : BasedataService
   ) {}
 
   options={
@@ -28,6 +29,10 @@ export class HomePage {
     }).catch((error )=>{
       console.log("error gettinf location", error)
     })
+  }
+
+  crear(){
+    this.firestore.agregarDoc()
   }
 
 }
