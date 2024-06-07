@@ -1,6 +1,7 @@
 import { Component, NgZone } from '@angular/core'
 import { Geolocation } from '@ionic-native/geolocation/ngx'
 import {BasedataService} from '../services/basedata.service'
+import {MapsControllerService} from '../services/maps-controller.service'
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,8 @@ export class HomePage {
 
   constructor(
     private geolocation: Geolocation,
-    private firestore : BasedataService
+    private firestore : BasedataService,
+    private mapas : MapsControllerService
   ) {}
 
   options={
@@ -31,8 +33,21 @@ export class HomePage {
     })
   }
 
+
+  
   crear(){
-    this.firestore.agregarDoc()
+    const data ={
+      latitud: this.latitude,
+      longitud: this.longitude
+    }
+    const path= "COORDENADAS/"
+    const id = "0001"
+    this.firestore.agregarDoc(data,path,id)
   }
+
+  mostrar(){
+    this.mapas.mostrarMapa(this.latitude,this.longitude)
+  }
+
 
 }

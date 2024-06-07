@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title> Ionic Geolocation & Geocoder Examples </ion-title>
+    <ion-title> GEOLOCALIZACION  </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -16,7 +16,7 @@
       </ion-list-header>
       <ion-item>
         <ion-label> Latitue </ion-label>
-        <ion-badge color="danger" slot="end">{{latitude}}</ion-badge>
+        <ion-badge color="danger" slot="end" >{{latitude}}</ion-badge>
       </ion-item>
       <ion-item>
         <ion-label> Longitude </ion-label>
@@ -24,4 +24,19 @@
       </ion-item>
     </ion-list>
   </div>
+    <div class="ion-padding">
+      <ion-button (click)="crear()" expand="block">
+        Guarda en la base
+      </ion-button>
+    </div>
+    <div class="ion-padding">
+      <ion-button expand="block" (click)="mostrar()">
+        Visualizar en el mapa
+      </ion-button>
+    </div>
+
+    <ion-content>
+      <div id="mapid" style="height:500px; width: 100%; "></div>
+    </ion-content>
+  
 </ion-content>

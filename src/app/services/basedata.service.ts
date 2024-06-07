@@ -8,8 +8,9 @@ export class BasedataService {
 
   constructor(private firestore: AngularFirestore) { } 
 
-  agregarDoc(){
-    this.firestore.collection('Coordenadas')
+  agregarDoc(data: any, path: string, id: string){
+    const collection = this.firestore.collection(path)
+    return collection.doc(id).set(data)
   }
   
 }

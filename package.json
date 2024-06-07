@@ -31,8 +31,10 @@
     "@ionic-native/geolocation": "^5.36.0",
     "@ionic-native/native-geocoder": "^5.36.0",
     "@ionic/angular": "^8.0.0",
+    "@types/leaflet": "^1.9.12",
     "firebase": "^10.12.2",
     "ionicons": "^7.0.0",
+    "leaflet": "^1.9.4",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
